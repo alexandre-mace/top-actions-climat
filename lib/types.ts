@@ -21,6 +21,7 @@ export interface SimpleActionData {
   alternative: number;
   difference: number;
   alternativeName: string;
+  [key: string]: unknown;
 }
 
 export interface DetailedActionData {
@@ -28,6 +29,7 @@ export interface DetailedActionData {
   value: number;
   type: "original" | "alternative";
   description: string;
+  [key: string]: unknown;
 }
 
 export interface ReferenceData {
@@ -38,4 +40,5 @@ export interface ReferenceData {
   alternativeName: string;
   isObjective: boolean;
   group: string;
+  [key: string]: unknown;
 }

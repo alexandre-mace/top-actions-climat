@@ -21,8 +21,8 @@ export const chartConfig = {
   },
 };
 
-export const getBarColor = (entry: any) => {
-  if ('isReference' in entry && entry.isReference) return chartConfig.reference.color;
-  if ('isObjective' in entry && entry.isObjective) return chartConfig.objective.color;
+export const getBarColor = (entry: { isReference?: boolean; isObjective?: boolean; [key: string]: unknown }) => {
+  if (entry.isReference) return chartConfig.reference.color;
+  if (entry.isObjective) return chartConfig.objective.color;
   return chartConfig.difference.color;
 };

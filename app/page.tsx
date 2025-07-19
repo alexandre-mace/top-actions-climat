@@ -85,8 +85,8 @@ export default function Home() {
                     name="Émissions CO₂"
                     radius={[8, 8, 0, 0]}
                   >
-                    {displayData.map((entry: any, index) => (
-                      <Cell key={`cell-detail-${index}`} fill={entry.type === 'original' ? chartConfig.original.color : chartConfig.alternative.color} />
+                    {displayData.map((entry, index) => (
+                      <Cell key={`cell-detail-${index}`} fill={('type' in entry && entry.type === 'original') ? chartConfig.original.color : chartConfig.alternative.color} />
                     ))}
                   </Bar>
                 )}
